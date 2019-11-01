@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+# prints string 10 times with a loop
+counter=0
+while [ $counter -le 12 ]
+do
+    echo Hour: $counter
+    i=1
+    while [ $i -le 59 ]
+    do
+	echo $i
+	((i++))
+
+    done
+((counter++))
+done
