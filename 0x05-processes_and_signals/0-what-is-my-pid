@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+#pid of the current proccess
+echo $$
