@@ -1,4 +1,3 @@
 #!/usr/bin/env bash
 # debug
-.etc/init.d/apache2 start
-export ServerName=127.0.0.1
+service apache2 start
