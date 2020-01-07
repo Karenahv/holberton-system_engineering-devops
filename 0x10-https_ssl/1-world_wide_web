@@ -1,10 +1,9 @@
 #!/usr/bin/env bash
 # print subdomains
 
-if [ -z "$2" ]
-then
-      DOMAIN=$1
-      awk dig $1
+print_text()
+{
+      DIGT=$(dig "$DOMAIN" | awk '/ANSWER SECTION:/ { getline; print $4 }')
       IPW=$(dig +short "www."$DOMAIN | tail -n1)
       echo "the subdomain www is a A record and points to $IPW"
       IPL=$(dig +short "lb-01."$DOMAIN | tail -n1)
@@ -13,6 +12,11 @@ then
       echo "the subdomain web-01 is a A record and points to $IPW1"
       IPW2=$(dig +short "web-02."$DOMAIN | tail -n1)
       echo "the subdomain web-02 is a A record and points to $IPW2"
+}
+if [ -z "$2" ]
+then
+      DOMAIN=$1
+      print_text $1 $DOMAIN
 else
       PUNTO="."
       DOMAIN=$2$PUNTO$1
