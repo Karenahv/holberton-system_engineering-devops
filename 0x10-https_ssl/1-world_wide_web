@@ -4,6 +4,7 @@
 if [ -z "$2" ]
 then
       DOMAIN=$1
+      awk dig $1
       IPW=$(dig +short "www."$DOMAIN | tail -n1)
       echo "the subdomain www is a A record and points to $IPW"
       IPL=$(dig +short "lb-01."$DOMAIN | tail -n1)
