@@ -24,7 +24,6 @@ defaults
 	option	httplog
 	option	dontlognull
 	option forwardfor
-	option http-server-close
         timeout connect 5000
         timeout client  50000
         timeout server  50000
@@ -49,9 +48,4 @@ backend web-backend
 frontend www-https
 	  bind *: 443 ssl crt /etc/haproxy/ssl/www.karenherrera.pem
 	  reqadd X-Forwarded-Proto:\ https
-	  acl letsencrypt-acl path_beg /.well-known/acme-challenge/
-	  use_backend letsencrypt-backend if letsencrypt-acl
 	  default_backend web-backend
-
-backend letsencrypt-backend
-	server letsencrypt
