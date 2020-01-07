@@ -46,6 +46,6 @@ backend web-backend
 	server 837-web-02 35.231.185.233:80 check
 
 frontend www-https
-	  bind *: 443 ssl crt /etc/haproxy/ssl/www.karenherrera.pem
+	  bind *: 443 ssl crt /etc/haproxy/ssl/www.karenherrera.tech.pem
 	  reqadd X-Forwarded-Proto:\ https
 	  default_backend web-backend
