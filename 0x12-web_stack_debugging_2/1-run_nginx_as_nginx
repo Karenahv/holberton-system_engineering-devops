@@ -2,6 +2,6 @@
 # nginx user configuration
 chmod 777 /etc/nginx/nginx.conf
 sudo sed -i '2i\\nuser nginx;' /etc/nginx/nginx.conf
-pkill apache2
+sudo pkill apache2
 sudo sed -i "s/80/8080/g" /etc/nginx/sites-available/default
-sudo -u nginx service nginx start
+su nginx -c 'service nginx restart'
