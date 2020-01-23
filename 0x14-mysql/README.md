@@ -1,0 +1,1 @@
+# Mysql Master and Slave configuration
