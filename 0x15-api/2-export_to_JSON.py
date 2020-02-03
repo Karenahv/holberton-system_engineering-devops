@@ -30,8 +30,8 @@ def tasks_employee():
         if todo.get('userId') == id_e:
             lista.append(todo)
     for todo in lista:
-        mydict['task'] = todo['title']
-        mydict['completed'] = todo['completed']
+        mydict['task'] = todo.get('title')
+        mydict['completed'] = todo.get('completed')
         mydict['username'] = user.get('name')
         mylist.append(mydict)
     mydict_final[str(id_e)] = mylist
