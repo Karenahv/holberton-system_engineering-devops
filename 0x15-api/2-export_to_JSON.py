@@ -29,11 +29,11 @@ def tasks_employee():
     for todo in todos:
         if todo.get('userId') == id_e:
             lista.append(todo)
-    for todo in lista:
-        mydict['task'] = todo.get('title')
-        mydict['completed'] = todo.get('completed')
-        mydict['username'] = user.get('name')
-        mylist.append(mydict)
+    user_name = user.get('username')
+    mylist = [{'task': todo.get('title'),
+               'completed': todo.get('completed'),
+               'username': user.get('username')}
+              for todo in lista]
     mydict_final[str(id_e)] = mylist
     with open(str(id_e) + '.json', 'w') as f:
         json.dump(mydict_final, f)
