@@ -34,7 +34,7 @@ def tasks_employee():
             else:
                 not_finished = not_finished + 1
     total = finished + not_finished
-    print("Employee {} is done with tasks ({}/{}):".format(user.get('name'),
+    print("Employee {} is done with tasks({}/{}):".format(user.get('name'),
                                                            finished, total))
     for task in tasks:
         print("\t {}".format(task))
