@@ -7,9 +7,8 @@ import requests
 base_url = 'http://reddit.com/r/{}/hot.json'
 
 
-def recurse(subreddit, hot_list=[]):
+def recurse(subreddit, hot_list=[], after=""):
     """all posts recursively"""
-    after = ""
     headers = {'User-agent': 'karenahv'}
     params = {'t': all, 'after': after}
     req = requests.get(base_url.format(subreddit), headers=headers,
