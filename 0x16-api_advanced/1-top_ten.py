@@ -21,5 +21,5 @@ def top_ten(subreddit):
         return
     for hot in info:
         if (i < 10):
-            print(hot.get('data').get('title').encode('utf8'))
+            print(hot.get('data').get('title'))
             i = i + 1
